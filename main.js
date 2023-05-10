@@ -149,6 +149,7 @@ const app = {
         return myArray
     },
     handleResetButton: function() {
+        const _this = this
         const resetButton = $('.btn--reset')
         
         const courage = $$('.courage__choice')
@@ -186,6 +187,10 @@ const app = {
                     checkbox.checked = false
                 }
             })
+
+            if(_this.config) {
+                _this.config.destroy()
+            }
         }
     },
     addValueIntoChart: function() {
